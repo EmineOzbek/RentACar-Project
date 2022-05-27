@@ -10,3 +10,5 @@ In this Rent A Car Management Project, you can access cars, damage records, cust
 - H2 Database
 - Lombok
 - Model Mapper
+
+## API examples
