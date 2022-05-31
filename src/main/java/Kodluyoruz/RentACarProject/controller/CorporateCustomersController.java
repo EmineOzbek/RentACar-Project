@@ -21,8 +21,13 @@ import Kodluyoruz.RentACarProject.dto.responseDtos.CorporateCustomerResponseDto;
 @RequestMapping("/corporateCustomers")
 public class CorporateCustomersController {
 
-	@Autowired
 	private CorporateCustomerService corporateCustomerService;
+
+	@Autowired
+	public CorporateCustomersController(CorporateCustomerService corporateCustomerService) {
+		super();
+		this.corporateCustomerService = corporateCustomerService;
+	}
 
 	@PostMapping("/saveCorporateCustomer")
 	public ResponseEntity<Integer> saveCorporateCustomer(@RequestBody CorporateCustomerRequestDto corporateCustomerRequestDto) {

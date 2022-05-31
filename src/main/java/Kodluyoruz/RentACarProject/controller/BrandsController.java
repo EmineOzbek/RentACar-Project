@@ -21,8 +21,13 @@ import Kodluyoruz.RentACarProject.dto.responseDtos.BrandResponseDto;
 @RequestMapping("/brands")
 public class BrandsController {
 
-	@Autowired
 	private BrandService brandService;
+
+	@Autowired
+	public BrandsController(BrandService brandService) {
+		super();
+		this.brandService = brandService;
+	}
 
 	@PostMapping("/saveBrand")
 	public ResponseEntity<Integer> saveBrand(@RequestBody BrandRequestDto brandRequestDto) {

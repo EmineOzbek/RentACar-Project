@@ -21,8 +21,13 @@ import Kodluyoruz.RentACarProject.dto.responseDtos.CarResponseDto;
 @RequestMapping("/cars")
 public class CarsController {
 
-	@Autowired
 	private CarService carService;
+
+	@Autowired
+	public CarsController(CarService carService) {
+		super();
+		this.carService = carService;
+	}
 
 	@PostMapping("/saveCar")
 	public ResponseEntity<Integer> saveCar(@RequestBody CarRequestDto carRequestDto) {

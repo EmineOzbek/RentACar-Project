@@ -21,8 +21,13 @@ import Kodluyoruz.RentACarProject.dto.responseDtos.RentalResponseDto;
 @RequestMapping("/rentals")
 public class RentalsController {
 
-	@Autowired
 	private RentalService rentalService;
+
+	@Autowired
+	public RentalsController(RentalService rentalService) {
+		super();
+		this.rentalService = rentalService;
+	}
 
 	@PostMapping("/saveRental")
 	public ResponseEntity<Integer> saveRental(@RequestBody RentalRequestDto rentalRequestDto) {

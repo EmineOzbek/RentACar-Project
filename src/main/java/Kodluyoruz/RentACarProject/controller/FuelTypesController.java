@@ -15,9 +15,14 @@ import Kodluyoruz.RentACarProject.dto.requestDtos.FuelTypeRequestDto;
 @RequestMapping("/fuelTypes")
 public class FuelTypesController {
 	
-	@Autowired
 	private FuelTypeService fuelTypeService;
 	
+	@Autowired
+	public FuelTypesController(FuelTypeService fuelTypeService) {
+		super();
+		this.fuelTypeService = fuelTypeService;
+	}
+
 	@PostMapping("/saveFuelType")
 	public ResponseEntity<Integer> saveFuelType(@RequestBody FuelTypeRequestDto fuelTypeRequestDto) {
 		Integer fuelTypeId = fuelTypeService.saveFuelType(fuelTypeRequestDto);

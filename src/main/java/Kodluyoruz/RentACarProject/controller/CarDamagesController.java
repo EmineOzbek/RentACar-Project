@@ -21,8 +21,13 @@ import Kodluyoruz.RentACarProject.dto.responseDtos.CarDamageResponseDto;
 @RequestMapping("/carDamages")
 public class CarDamagesController {
 
-	@Autowired
 	private CarDamageService carDamageService;
+
+	@Autowired
+	public CarDamagesController(CarDamageService carDamageService) {
+		super();
+		this.carDamageService = carDamageService;
+	}
 
 	@PostMapping("/saveCarDamage")
 	public ResponseEntity<Integer> saveCarDamage(@RequestBody CarDamageRequestDto carDamageRequestDto) {

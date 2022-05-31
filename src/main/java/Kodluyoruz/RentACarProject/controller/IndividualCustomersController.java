@@ -21,8 +21,13 @@ import Kodluyoruz.RentACarProject.dto.responseDtos.IndividualCustomerResponseDto
 @RequestMapping("/individualCustomers")
 public class IndividualCustomersController {
 
-	@Autowired
 	private IndividualCustomerService individualCustomerService;
+
+	@Autowired
+	public IndividualCustomersController(IndividualCustomerService individualCustomerService) {
+		super();
+		this.individualCustomerService = individualCustomerService;
+	}
 
 	@PostMapping("/saveIndividualCustomer")
 	public ResponseEntity<Integer> saveIndividualCustomer(@RequestBody IndividualCustomerRequestDto individualCustomerRequestDto) {

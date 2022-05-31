@@ -17,8 +17,13 @@ import Kodluyoruz.RentACarProject.dto.responseDtos.CustomerResponseDto;
 @RequestMapping("/customers")
 public class CustomersController {
 
-	@Autowired
 	private CustomerService customerService;
+
+	@Autowired
+	public CustomersController(CustomerService customerService) {
+		super();
+		this.customerService = customerService;
+	}
 
 	@GetMapping("/findAllCustomers")
 	public ResponseEntity<List<CustomerResponseDto>> findAllCustomers() {

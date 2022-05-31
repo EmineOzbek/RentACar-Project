@@ -22,8 +22,13 @@ import Kodluyoruz.RentACarProject.dto.responseDtos.InvoiceResponseDto;
 @RequestMapping("/Invoices")
 public class InvoicesController {
 
-	@Autowired
 	private InvoiceService invoiceService;
+
+	@Autowired
+	public InvoicesController(InvoiceService invoiceService) {
+		super();
+		this.invoiceService = invoiceService;
+	}
 
 	@PostMapping("/saveInvoiceCorporateCustomer")
 	public ResponseEntity<Integer> saveInvoiceCorporateCustomer(@RequestBody InvoiceCorporateCustomerRequestDto invoiceCorporateCustomerRequestDto) {
