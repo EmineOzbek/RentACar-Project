@@ -41,7 +41,7 @@ public class CarCoordinatorUnitTest {
 		when(carRepository.save(carMock)).thenReturn(carMock);
 		Integer carSaveSuccess = carManager.saveCar(carRequestDto);
 
-		Assertions.assertEquals("Car saved.", carSaveSuccess);
+		Assertions.assertEquals(0, carSaveSuccess);
 	}
 
 	@Test
@@ -52,7 +52,7 @@ public class CarCoordinatorUnitTest {
 		when(carRepository.findById(carMock.getId())).thenReturn(Optional.of(carMock));
 		boolean delete = carManager.deleteCarById(carMock.getId());
 
-		Assertions.assertEquals("Car deleted.", delete);
+		Assertions.assertEquals(true, delete);
 	}
 
 }

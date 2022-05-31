@@ -41,7 +41,7 @@ public class RentalCoordinatorUnitTest {
 		when(rentalRepository.save(rentalMock)).thenReturn(rentalMock);
 		Integer rentalSaveSuccess = rentalManager.saveRental(rentalRequestDto);
 
-		Assertions.assertEquals("Rental saved.", rentalSaveSuccess);
+		Assertions.assertEquals(0, rentalSaveSuccess);
 	}
 
 	@Test
@@ -52,6 +52,6 @@ public class RentalCoordinatorUnitTest {
 		when(rentalRepository.findById(rentalMock.getId())).thenReturn(Optional.of(rentalMock));
 		boolean delete = rentalManager.deleteRentalById(rentalMock.getId());
 
-		Assertions.assertEquals("Rental deleted.", delete);
+		Assertions.assertEquals(true, delete);
 	}
 }

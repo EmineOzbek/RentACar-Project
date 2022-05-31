@@ -41,7 +41,7 @@ public class BrandCoordinatorUnitTest {
 		when(brandRepository.save(brandMock)).thenReturn(brandMock);
 		Integer brandSaveSuccess = brandManager.saveBrand(brandRequestDto);
 
-		Assertions.assertEquals("Brand saved.", brandSaveSuccess);
+		Assertions.assertEquals(0, brandSaveSuccess);
 	}
 
 	@Test
@@ -52,7 +52,7 @@ public class BrandCoordinatorUnitTest {
 		when(brandRepository.findById(brandMock.getId())).thenReturn(Optional.of(brandMock));
 		boolean delete = brandManager.deleteBrandById(brandMock.getId());
 
-		Assertions.assertEquals("Brand deleted.", delete);
+		Assertions.assertEquals(true, delete);
 	}
 
 }
