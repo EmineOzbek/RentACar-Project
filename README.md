@@ -1,5 +1,5 @@
 
-# Rent A Car Management Project
+# Rent A Car Project
 Kodluyoruz DRC Java Bootcamp(Kodla, Kariyerine Başla Java Bootcamp) graduation project. <br/>
 In this Rent A Car Management Project, you can access cars, damage records, customers, invoices, and payments. You can add, search and list each of them.
 
@@ -11,7 +11,10 @@ In this Rent A Car Management Project, you can access cars, damage records, cust
 - Lombok
 - Model Mapper
 
-## API examples
+## UML Diagram for Entities
+![UML Diagram for Entities](https://github.com/EmineOzbek/RentACar-Project/blob/main/images/UML_entities.png)
+
+## API Examples
 ### Postman
 - saveCar <br/> 
 ![saveCar](https://github.com/EmineOzbek/RentACar-Project/blob/main/images/saveCar.png) <br/> <br/>
